@@ -20,9 +20,10 @@ require('lazy').setup({
   -- Use `opts = {}` to force a plugin to be loaded.
   --
 
-
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
+
+  require 'kickstart/plugins/neo-tree',
 
   require 'kickstart/plugins/gitsigns',
 
@@ -53,6 +54,23 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
+  require 'custom.plugins.autoclose',
+
+  require 'custom.plugins.autopairs',
+
+  require 'custom.plugins.barbar',
+
+  require 'custom.plugins.dev-icons',
+
+  require 'custom.plugins.fugitive',
+
+  require 'custom.plugins.lazygit',
+
+  require 'custom.plugins.nvim-lint',
+
+  require 'custom.plugins.venv-selector',
+
+  require 'custom.plugins.vim-navigator',
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
