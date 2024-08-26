@@ -237,11 +237,12 @@ return {
             plugins = {
               {
                 name = '@vue/typescript-plugin',
-                location = '/path/to/@vue/language-server', -- not set due to quasar issues
+                location = '/home/mark/.local/share/nvim/mason/vue-language-server', -- not set due to quasar issues
                 languages = { 'vue' },
               },
             },
           },
+          -- filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
         },
         volar = {
           init_options = {
