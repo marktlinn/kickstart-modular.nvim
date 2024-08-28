@@ -66,8 +66,6 @@ require('lazy').setup({
 
   require 'custom.plugins.lsp_signature',
 
-  require 'custom.plugins.nvim-lint',
-
   require 'custom.plugins.nvim-tree',
 
   require 'custom.plugins.venv-selector',

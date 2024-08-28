@@ -7,6 +7,14 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
+        javascript = { 'eslint' },
+        typescript = { 'eslint' },
+        vue = { 'eslint' },
+        go = { 'golangcilint' },
+        python = { 'mypy' },
+        yaml = { 'yamllint' },
+        terraform = { 'tflint', 'trivy' },
+        tf = { 'tflint', 'trivy' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,

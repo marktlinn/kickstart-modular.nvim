@@ -109,6 +109,10 @@ return {
           --  For example, in C this would take you to the header.
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
+          -- Opens a popup that displays documentation about the word under your cursor
+          --  See `:help K` for why this keymap
+          map('<leader>h', vim.lsp.buf.hover, 'Hover Documentation')
+
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
           --    See `:help CursorHold` for information about when this is executed
@@ -237,7 +241,7 @@ return {
             plugins = {
               {
                 name = '@vue/typescript-plugin',
-                location = '/home/mark/.local/share/nvim/mason/vue-language-server', -- not set due to quasar issues
+                location = '', -- not set due to quasar issues
                 languages = { 'vue' },
               },
             },
