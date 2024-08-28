@@ -23,11 +23,19 @@ require('lazy').setup({
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
+  require 'kickstart.plugins.autopairs',
+
   require 'kickstart/plugins/cmp',
 
   require 'kickstart/plugins/conform',
 
+  -- require 'kickstart.plugins.debug',
+
   require 'kickstart/plugins/gitsigns',
+
+  require 'kickstart.plugins.indent_line',
+
+  require 'kickstart.plugins.lint',
 
   require 'kickstart/plugins/lspconfig',
 
@@ -54,8 +62,6 @@ require('lazy').setup({
   --
   require 'custom.plugins.autoclose',
 
-  require 'custom.plugins.autopairs',
-
   require 'custom.plugins.barbar',
 
   require 'custom.plugins.dev-icons',
@@ -71,11 +77,6 @@ require('lazy').setup({
   require 'custom.plugins.venv-selector',
 
   require 'custom.plugins.vim-navigator',
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

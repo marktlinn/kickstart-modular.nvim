@@ -182,6 +182,7 @@ return {
         bashls = {},
         dockerls = {},
         docker_compose_language_service = {},
+        --
         -- Golang
         gopls = {
           settings = {
@@ -227,6 +228,7 @@ return {
             },
           },
         },
+
         goimports = {},
         golines = {},
         impl = {},
@@ -234,6 +236,9 @@ return {
         gofumpt = {},
         templ = {},
         vim.filetype.add { extension = { templ = 'templ' } },
+
+        -- python
+        pyright = {},
 
         -- js
         tsserver = {
