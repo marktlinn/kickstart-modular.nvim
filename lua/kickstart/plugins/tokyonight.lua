@@ -13,7 +13,9 @@ return {
       vim.cmd.colorscheme 'tokyonight-night'
 
       -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
+      -- vim.cmd.hi 'Comment gui=none'
+      vim.cmd 'hi Normal ctermbg=NONE guibg=NONE'
+      vim.cmd 'hi NonText ctermbg=NONE guibg=NONE'
     end,
   },
 }

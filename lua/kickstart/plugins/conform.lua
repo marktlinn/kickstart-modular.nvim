@@ -32,6 +32,7 @@ return {
         }
       end,
       formatters_by_ft = {
+        cpp = { 'clang-format' },
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
         -- Conform can also run multiple formatters sequentially

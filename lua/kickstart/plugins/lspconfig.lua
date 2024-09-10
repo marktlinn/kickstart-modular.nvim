@@ -243,7 +243,7 @@ return {
         pyright = {},
 
         -- js
-        tsserver = {
+        ts_ls = {
           init_options = {
             plugins = {
               {
@@ -325,12 +325,13 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format lua code
         'black',
-        'mypy',
+        'clang-format',
         'eslint-lsp',
-        'prettier',
         'golangci_lint_ls',
+        'mypy',
+        'prettier',
+        'stylua', -- Used to format lua code
         'tflint',
         'trivy',
       })
