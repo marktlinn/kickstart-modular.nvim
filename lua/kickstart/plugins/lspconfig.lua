@@ -210,7 +210,6 @@ return {
                 rangeVariableTypes = true,
               },
               analyses = {
-                fieldalignment = true,
                 nilness = true,
                 unusedparams = true,
                 unusedwrite = true,
@@ -240,8 +239,19 @@ return {
         vim.filetype.add { extension = { templ = 'templ' } },
 
         -- python
-        pyright = {},
-
+        pyright = {
+          settings = {
+            pyright = {
+              disableOrganizeImports = true, -- Using Ruff
+            },
+            python = {
+              analysis = {
+                ignore = { '*' }, -- Using Ruff
+                typeCheckingMode = 'off', -- Using mypy
+              },
+            },
+          },
+        },
         -- js
         ts_ls = {
           init_options = {
@@ -325,13 +335,14 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'black',
+        -- 'black',
         'clang-format',
         'eslint-lsp',
         'golangci_lint_ls',
         'mypy',
         'prettier',
-        'stylua', -- Used to format lua code
+        'ruff',
+        'stylua',
         'tflint',
         'trivy',
       })

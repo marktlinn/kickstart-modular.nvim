@@ -33,11 +33,19 @@ return {
       end,
       formatters_by_ft = {
         cpp = { 'clang-format' },
+        c = { 'clang-format' },
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
         -- Conform can also run multiple formatters sequentially
-        python = { 'isort', 'black' },
-        --
+        python = {
+          -- To fix auto-fixable lint errors.
+          'ruff_fix',
+          -- To run the Ruff formatter.
+          'ruff_format',
+          -- To organize the imports.
+          'ruff_organize_imports',
+        },
+
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
         javascript = { 'prettier' },
@@ -45,7 +53,7 @@ return {
         css = { 'prettier' },
         markdown = { ' prettier' },
         html = { 'prettier' },
-        yaml = { 'prettier' },
+        yaml = { 'yamlfmt' },
         vue = { 'prettier' },
 
         go = { 'gofumpt', 'golines', 'goimports' },
