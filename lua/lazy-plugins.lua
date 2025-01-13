@@ -74,6 +74,8 @@ require('lazy').setup({
 
   require 'custom.plugins.nvim-tree',
 
+  require 'custom.plugins.terminal',
+
   require 'custom.plugins.venv-selector',
 
   require 'custom.plugins.vim-navigator',

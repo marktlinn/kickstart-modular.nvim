@@ -8,13 +8,15 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Terminal Settings
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
 --
--- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
--- or just use <C-\><C-n> to exit terminal mode
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+-- -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
+-- -- or just use <C-\><C-n> to exit terminal mode
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('n', '<leader>j', ':ToggleTerm<CR>')
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -48,8 +50,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- custom mappings
 
 -- Nvim-tree toggle mapping
--- vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>', { desc = 'Toggle Nvim Tree' })
-vim.keymap.set('n', '\\', ':NvimTreeToggle<CR>', { desc = 'Toggle Nvim Tree' })
+vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>', { desc = 'Toggle Nvim Tree' })
 
 --  Window Navigation
 --  See `:help wincmd` for a list of all window commands
