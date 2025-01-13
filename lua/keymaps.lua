@@ -16,7 +16,10 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open diagn
 -- -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-vim.keymap.set('n', '<leader>j', ':ToggleTerm<CR>')
+vim.keymap.set('n', '<leader>j', ':ToggleTerm<CR>', { desc = 'Toggle terminal' })
+vim.keymap.set('n', '<leader>2j', ':ToggleTerm 2<CR>', { desc = 'Add 2nd terminal' })
+vim.keymap.set('n', '<leader>3j', ':ToggleTerm 3<CR>', { desc = 'Add 3rd terminal' })
+vim.keymap.set('n', '<leader>4j', ':ToggleTerm 4<CR>', { desc = 'Add 4th terminal' })
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
