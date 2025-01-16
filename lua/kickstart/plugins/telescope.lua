@@ -73,6 +73,7 @@ return {
             },
           },
           extensions = {
+            fzf = {},
             ['ui-select'] = {
               require('telescope.themes').get_dropdown(),
             },
@@ -98,13 +99,13 @@ return {
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
       -- Slightly advanced example of overriding default behavior and theme
-      vim.keymap.set('n', '<leader>/', function()
-        -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-        builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-          winblend = 10,
-          previewer = false,
-        })
-      end, { desc = '[/] Fuzzily search in current buffer' })
+      -- vim.keymap.set('n', '<leader>/', function()
+      -- You can pass additional configuration to Telescope to change the theme, layout, etc.
+      --   builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+      --     winblend = 10,
+      --     previewer = false,
+      --   })
+      -- end, { desc = '[/] Fuzzily search in current buffer' })
 
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
@@ -119,6 +120,13 @@ return {
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      -- MultiGrep - enables searching by mutiple criteria to narrow searches.
+      -- Each search term is seperated by a delimiter.
+      -- term one searches for occurence in line
+      -- term two searches for glob
+      -- e.g. "function  *.lua" (double space = delimiter) - searches for line "function" in any .lua files
+      require('custom.plugins.multi-grep').setup()
     end,
   },
 }
