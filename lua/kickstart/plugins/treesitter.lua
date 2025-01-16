@@ -31,6 +31,7 @@ return {
         'vimdoc',
         'vue',
         'yaml',
+        'zig',
       },
       --
       -- Autoinstall languages that are not installed
