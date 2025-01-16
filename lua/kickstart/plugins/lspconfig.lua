@@ -111,6 +111,10 @@ return {
 
           -- Opens a popup that displays documentation about the word under your cursor
           --  See `:help K` for why this keymap
+          -- vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { focusable = false })
+          vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+            border = 'rounded',
+          })
           map('<leader>h', vim.lsp.buf.hover, 'Hover Documentation')
 
           -- The following two autocommands are used to highlight references of the
@@ -258,18 +262,56 @@ return {
             plugins = {
               {
                 name = '@vue/typescript-plugin',
-                location = vue_language_server_path,
-                languages = { 'typescript', 'javascript', 'vue' },
+                location = vim.fn.stdpath 'data' .. '/mason/packages/vue-language-server/node_modules/@vue/language-server',
+                languages = { 'vue' },
               },
             },
           },
-          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+          settings = {
+            typescript = {
+              tsserver = {
+                useSyntaxServer = false,
+              },
+              inlayHints = {
+                includeInlayParameterNameHints = 'all',
+                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayVariableTypeHints = true,
+                includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayEnumMemberValueHints = true,
+              },
+            },
+          },
         },
 
         volar = {
           init_options = {
             vue = {
               hybridMode = false,
+            },
+          },
+          settings = {
+            typescript = {
+              inlayHints = {
+                enumMemberValues = {
+                  enabled = true,
+                },
+                functionLikeReturnTypes = {
+                  enabled = true,
+                },
+                propertyDeclarationTypes = {
+                  enabled = true,
+                },
+                parameterTypes = {
+                  enabled = true,
+                  suppressWhenArgumentMatchesName = true,
+                },
+                variableTypes = {
+                  enabled = true,
+                },
+              },
             },
           },
         },
@@ -314,13 +356,14 @@ return {
           },
         },
         html = {},
-        htmx = {},
+        -- htmx = {},
         helm_ls = {},
         terraformls = {},
         jsonls = {},
         sqlls = {},
         markdownlint = {},
         yamllint = {},
+        zls = {},
       }
 
       -- Ensure the servers and tools above are installed
