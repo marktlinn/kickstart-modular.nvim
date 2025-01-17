@@ -64,6 +64,8 @@ require('lazy').setup({
 
   require 'custom.plugins.barbar',
 
+  require 'custom.plugins.comment',
+
   require 'custom.plugins.dev-icons',
 
   require 'custom.plugins.fugitive',
